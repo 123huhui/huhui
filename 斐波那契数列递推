@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int func(int n)
+{
+	int a=1;
+	int b=1;
+	int all;
+	if(n==1)
+	return 1;
+	if(n==2)
+	return 1;
+	if(n>2)
+	{
+	  for(int i=3;i<=n;i++)
+	    {
+		 all=a+b;
+	     a=b;
+	     b=all;
+	    }
+	    return all;
+    }
+}
+int main()
+{
+	cout<<"输入第n个的位置数："<<endl;
+	int i;
+	cin>>i; 
+	cout<<"结果是："<<endl; 
+	cout<<func(i)<<endl;
+	return 0;
+}
+
+时间复杂度：O(n)；当n=1或n=2时，复杂度为O(1)，当n>2时，复杂度为O(n)
