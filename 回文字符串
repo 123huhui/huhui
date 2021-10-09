@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string.h> 
+using namespace std;
+bool isPalindrome(char *c,int length)
+{
+   char *front = c;
+   char *back = c + length -1;
+   if (c==NULL||length<1)
+   {
+   	return false;
+   }
+   while(front<back)
+   {
+   	if (*front != *back)
+	{ 
+   		return false;
+   	}
+   	front++;
+   	back--;
+   } 
+   return true;
+}
+int main()
+{
+	char c[50];
+	cout << "please input a char" << endl;
+	cin >> c;
+	int length = strlen(c);
+	bool result = isPalindrome(c,length);
+	if (result)
+	{
+		cout << c << " is a palindrome" <<endl;
+	}
+	else
+	{
+		cout << c << " is not a palindrome" <<endl;
+	}
+	return 0;
+}
